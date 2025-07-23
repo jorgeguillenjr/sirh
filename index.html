@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Solutions - Administración Integral de Recursos Humanos</title>
+    <title>Servicios Integrales en Recursos Humanos - Administración Integral de RRHH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>SIRH</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="hero-title">Servicios Integrales en Recursos Humanos</h1>
+                <p class="hero-subtitle">Optimizamos el capital humano de tu empresa con soluciones profesionales y eficientes</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contacto')">Solicitar Cotización</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('servicios')">Conocer Servicios</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Soluciones completas para la gestión de tu talento humano</p>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="nomina">
+                    <div class="service-icon">💰</div>
+                    <h3>Gestión de Nómina</h3>
+                    <p>Administración completa de nóminas, cálculo de prestaciones sociales y manejo de liquidaciones.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+                
+                <div class="service-card" data-service="administracion">
+                    <div class="service-icon">👥</div>
+                    <h3>Administración del Personal</h3>
+                    <p>Control integral de expedientes, documentación legal y procesos administrativos del personal.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+                
+                <div class="service-card" data-service="reclutamiento">
+                    <div class="service-icon">🎯</div>
+                    <h3>Reclutamiento y Selección</h3>
+                    <p>Identificación y selección del mejor talento humano para tu organización.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+                
+                <div class="service-card" data-service="contratacion">
+                    <div class="service-icon">📋</div>
+                    <h3>Contratación</h3>
+                    <p>Gestión completa del proceso de contratación y formalización de vínculos laborales.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+                
+                <div class="service-card" data-service="desvinculacion">
+                    <div class="service-icon">🤝</div>
+                    <h3>Desvinculación</h3>
+                    <p>Manejo profesional de procesos de desvinculación y liquidaciones laborales.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+                
+                <div class="service-card" data-service="consultoria">
+                    <div class="service-icon">💡</div>
+                    <h3>Consultoría en Capital Humano</h3>
+                    <p>Asesoría estratégica para optimizar la gestión del talento en tu empresa.</p>
+                    <button class="service-btn">Más información</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>¿Por qué elegir Servicios Integrales en Recursos Humanos?</h2>
+                    <p>Con más de 15 años de experiencia en el sector, somos líderes en la administración integral de recursos humanos. Nuestro equipo de expertos combina conocimiento técnico con tecnología de vanguardia para ofrecer soluciones personalizadas.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <div>
+                                <h4>Experiencia Comprobada</h4>
+                                <p>Más de 500 empresas confían en nosotros</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <div>
+                                <h4>Cumplimiento Legal</h4>
+                                <p>Garantizamos el cumplimiento de toda la normativa laboral</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            <div>
+                                <h4>Tecnología Avanzada</h4>
+                                <p>Plataformas digitales para mayor eficiencia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Empresas Atendidas</p>
+                    </div>
+                    <div class="stat">
+                        <h3>15+</h3>
+                        <p>Años de Experiencia</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50,000+</h3>
+                        <p>Empleados Gestionados</p>
+                    </div>
+                    <div class="stat">
+                        <h3>99%</h3>
+                        <p>Satisfacción del Cliente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Servicios Integrales en Recursos Humanos transformó completamente nuestra gestión de nómina. Ahora todo es más eficiente y confiable."</p>
+                    <div class="testimonial-author">
+                        <strong>María González</strong>
+                        <span>Directora de RRHH - TechCorp</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"El proceso de reclutamiento mejoró significativamente. Encontramos el talento perfecto en tiempo récord."</p>
+                    <div class="testimonial-author">
+                        <strong>Carlos Mendoza</strong>
+                        <span>Gerente General - InnovaCorp</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Su consultoría nos ayudó a estructurar mejor nuestros procesos de RRHH. Excelente servicio."</p>
+                    <div class="testimonial-author">
+                        <strong>Ana Rodríguez</strong>
+                        <span>CEO - StartupPlus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Solicita tu Cotización</h2>
+            <p class="section-subtitle">Cuéntanos sobre tu empresa y te brindaremos una propuesta personalizada</p>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="cotizacionForm">
+                        <div class="form-group">
+                            <label for="empresa">Nombre de la Empresa*</label>
+                            <input type="text" id="empresa" name="empresa" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo*</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargo">Cargo</label>
+                                <input type="text" id="cargo" name="cargo">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono*</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="empleados">Número de Empleados</label>
+                            <select id="empleados" name="empleados">
+                                <option value="">Selecciona un rango</option>
+                                <option value="1-10">1-10 empleados</option>
+                                <option value="11-50">11-50 empleados</option>
+                                <option value="51-100">51-100 empleados</option>
+                                <option value="101-500">101-500 empleados</option>
+                                <option value="500+">Más de 500 empleados</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="servicios">Servicios de Interés</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="nomina">
+                                    Gestión de Nómina
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="administracion">
+                                    Administración del Personal
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="reclutamiento">
+                                    Reclutamiento y Selección
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="contratacion">
+                                    Contratación
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="desvinculacion">
+                                    Desvinculación
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="servicios" value="consultoria">
+                                    Consultoría en Capital Humano
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje Adicional</label>
+                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos más detalles sobre tus necesidades..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Solicitar Cotización</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>Av. Principal 123, Piso 5<br>Ciudad, País</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>avusahn@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕒</span>
+                        <div>
+                            <strong>Horario de Atención</strong>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Servicios Integrales en Recursos Humanos</h3>
+                    <p>Líderes en administración integral de recursos humanos, brindando soluciones eficientes y confiables para el crecimiento de tu empresa.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Gestión de Nómina</a></li>
+                        <li><a href="#servicios">Administración del Personal</a></li>
+                        <li><a href="#servicios">Reclutamiento</a></li>
+                        <li><a href="#servicios">Consultoría</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#">Políticas de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📞 +1 (555) 123-4567</p>
+                    <p>📧 avusahn@gmail.com</p>
+                    <p>📍 Av. Principal 123, Piso 5</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Servicios Integrales en Recursos Humanos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>¡Solicitud Enviada!</h3>
+            <p>Gracias por tu interés. Nos pondremos en contacto contigo en las próximas 24 horas.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

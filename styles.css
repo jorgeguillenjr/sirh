@@ -12,7 +12,7 @@
     --success-color: #059669;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-    --text-primary: #1f2937;
+    --text-primary: rgba(66, 18, 60, 0.863);
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
     --bg-light: #f8fafc;
@@ -120,7 +120,8 @@ p {
 }
 
 .nav-brand h2 {
-    color: #1e3a8a;
+    /* color: #1e3a8a; */
+    rgba(66, 18, 60, 0.863)
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -169,7 +170,7 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url('./public/rechum.jpg');
+    background-image: url('./images/sirh-fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

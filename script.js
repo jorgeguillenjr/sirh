@@ -153,7 +153,7 @@ form.addEventListener('submit', (e) => {
     }
     
     // Send via Formspree directly
-    fetch('https://formspree.io/f/xanbevro', {
+    fetch('https://formspree.io/f/xrblkwvl', {
         method: 'POST',
         body: formData,
         headers: {
@@ -264,7 +264,7 @@ Enviado desde el formulario web de SIRH
 Fecha: ${new Date().toLocaleString('es-ES')}
     `.trim();
     
-    return `mailto:avusahn@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:sirh.honduras@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 // Modal close handlers

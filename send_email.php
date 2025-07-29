@@ -34,7 +34,7 @@ if (!filter_var($input['email'], FILTER_VALIDATE_EMAIL)) {
 }
 
 // Prepare email content
-$to = 'avusahn@gmail.com';
+$to = 'sirh.honduras@gmail.com';
 $subject = 'Nueva Solicitud de Cotización - ' . $input['empresa'];
 
 $servicios = is_array($input['servicios']) ? implode(', ', $input['servicios']) : ($input['servicios'] ?? 'No especificado');

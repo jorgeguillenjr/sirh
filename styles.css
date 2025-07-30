@@ -572,6 +572,16 @@ p {
     height: 40px;
     width: auto;
     object-fit: contain;
+    box-shadow: 2px 2px 8px rgba(128, 128, 128, 0.3), 
+                1px 1px 4px rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.footer-logo:hover {
+    box-shadow: 3px 3px 12px rgba(128, 128, 128, 0.4), 
+                2px 2px 6px rgba(128, 128, 128, 0.3);
+    transform: translateY(-1px);
 }
 
 .footer-bottom p {
@@ -587,6 +597,8 @@ p {
     
     .footer-logo {
         height: 30px;
+        box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.3), 
+                    0.5px 0.5px 3px rgba(128, 128, 128, 0.2);
     }
 }
 /* Modal */

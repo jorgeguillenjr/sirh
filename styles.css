@@ -569,7 +569,7 @@ p {
 }
 
 .footer-logo {
-    height: 60px;
+    height: 40px;
     width: auto;
     object-fit: contain;
 }
@@ -586,7 +586,7 @@ p {
     }
     
     .footer-logo {
-        height: 45px;
+        height: 30px;
     }
 }
 /* Modal */

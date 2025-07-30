@@ -87,34 +87,124 @@ function showServiceInfo(serviceName) {
     const serviceInfo = {
         nomina: {
             title: 'Gestión de Nómina',
-            description: 'Ofrecemos un servicio completo de administración de nóminas que incluye:\n\n• Cálculo preciso de salarios y prestaciones\n• Manejo de deducciones legales\n• Generación de reportes fiscales\n• Liquidación de prestaciones sociales\n• Cumplimiento de normativas laborales\n• Soporte en auditorías',
+            icon: '💰',
+            description: 'Ofrecemos un servicio completo de administración de nóminas que garantiza precisión, cumplimiento legal y eficiencia en todos los procesos relacionados con el pago de salarios y prestaciones.',
+            features: [
+                'Cálculo preciso de salarios y prestaciones',
+                'Manejo de deducciones legales',
+                'Generación de reportes fiscales',
+                'Liquidación de prestaciones sociales',
+                'Cumplimiento de normativas laborales',
+                'Soporte en auditorías'
+            ]
         },
         administracion: {
             title: 'Administración del Personal',
-            description: 'Gestión integral de todos los aspectos administrativos del personal:\n\n• Control de expedientes digitales\n• Manejo de documentación legal\n• Administración de contratos\n• Control de asistencia y vacaciones\n• Evaluaciones de desempeño\n• Reportes ejecutivos',
+            icon: '👥',
+            description: 'Gestión integral de todos los aspectos administrativos del personal, desde el control de expedientes hasta la evaluación del desempeño.',
+            features: [
+                'Control de expedientes digitales',
+                'Manejo de documentación legal',
+                'Administración de contratos',
+                'Control de asistencia y vacaciones',
+                'Evaluaciones de desempeño',
+                'Reportes ejecutivos'
+            ]
         },
         reclutamiento: {
             title: 'Reclutamiento y Selección',
-            description: 'Encontramos el talento perfecto para tu organización:\n\n• Análisis de perfiles y competencias\n• Búsqueda activa de candidatos\n• Procesos de selección estructurados\n• Evaluaciones psicotécnicas\n• Referencias laborales\n• Onboarding personalizado',
+            icon: '🎯',
+            description: 'Encontramos el talento perfecto para tu organización mediante procesos de selección estructurados y evaluaciones especializadas.',
+            features: [
+                'Análisis de perfiles y competencias',
+                'Búsqueda activa de candidatos',
+                'Procesos de selección estructurados',
+                'Evaluaciones psicotécnicas',
+                'Referencias laborales',
+                'Onboarding personalizado'
+            ]
         },
         contratacion: {
             title: 'Contratación',
-            description: 'Formalizamos vínculos laborales de manera eficiente:\n\n• Elaboración de contratos laborales\n• Afiliaciones a seguridad social\n• Trámites ante entidades gubernamentales\n• Inducción corporativa\n• Capacitación inicial\n• Seguimiento de periodo de prueba',
+            icon: '📋',
+            description: 'Formalizamos vínculos laborales de manera eficiente, garantizando el cumplimiento de todos los requisitos legales y administrativos.',
+            features: [
+                'Elaboración de contratos laborales',
+                'Afiliaciones a seguridad social',
+                'Trámites ante entidades gubernamentales',
+                'Inducción corporativa',
+                'Capacitación inicial',
+                'Seguimiento de periodo de prueba'
+            ]
         },
         desvinculacion: {
             title: 'Desvinculación',
-            description: 'Manejo profesional de procesos de desvinculación:\n\n• Análisis legal de causales\n• Cálculo de liquidaciones\n• Trámites de desafiliación\n• Entrega de certificaciones\n• Asesoría en procesos disciplinarios\n• Mediación laboral',
+            icon: '🤝',
+            description: 'Manejo profesional de procesos de desvinculación, garantizando el cumplimiento legal y la protección de ambas partes.',
+            features: [
+                'Análisis legal de causales',
+                'Cálculo de liquidaciones',
+                'Trámites de desafiliación',
+                'Entrega de certificaciones',
+                'Asesoría en procesos disciplinarios',
+                'Mediación laboral'
+            ]
         },
         consultoria: {
             title: 'Consultoría en Capital Humano',
-            description: 'Asesoría estratégica para optimizar tu gestión humana:\n\n• Diagnóstico organizacional\n• Diseño de estructuras organizacionales\n• Desarrollo de políticas de RRHH\n• Planes de capacitación\n• Evaluación de clima laboral\n• Estrategias de retención de talento',
+            icon: '💡',
+            description: 'Asesoría estratégica para optimizar tu gestión humana y desarrollar el potencial de tu organización.',
+            features: [
+                'Diagnóstico organizacional',
+                'Diseño de estructuras organizacionales',
+                'Desarrollo de políticas de RRHH',
+                'Planes de capacitación',
+                'Evaluación de clima laboral',
+                'Estrategias de retención de talento'
+            ]
         }
     };
 
     const info = serviceInfo[serviceName];
     if (info) {
-        alert(`${info.title}\n\n${info.description}\n\n¿Te interesa este servicio? Contáctanos para una cotización personalizada.`);
+        showServiceModal(info);
     }
+}
+
+// Show service modal with improved design
+function showServiceModal(serviceInfo) {
+    // Create modal HTML
+    const modalHTML = `
+        <div class="modal-header">
+            <span class="modal-service-icon">${serviceInfo.icon}</span>
+            <h3>${serviceInfo.title}</h3>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p class="modal-description">${serviceInfo.description}</p>
+            <ul class="modal-features">
+                ${serviceInfo.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-cta-button" onclick="scrollToSection('contacto'); modal.style.display='none';">
+                Solicitar Cotización
+            </button>
+        </div>
+    `;
+    
+    // Update modal content
+    const modalContent = document.querySelector('.modal-content');
+    modalContent.innerHTML = modalHTML;
+    
+    // Show modal
+    modal.style.display = 'block';
+    
+    // Add close event listener to the new close button
+    const newCloseButton = modalContent.querySelector('.close');
+    newCloseButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 }
 
 // Form handling

@@ -558,10 +558,37 @@ p {
 .footer-bottom {
     border-top: 1px solid white;/*#374151;*/
     padding-top: 1rem;
-    text-align: center;
     color: #9ca3af;
 }
 
+.footer-bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .footer-logo {
+        height: 30px;
+    }
+}
 /* Modal */
 .modal {
     display: none;

@@ -12,7 +12,8 @@
     --success-color: #059669;
     --warning-color: #f59e0b;
     --error-color: #ef4444;
-    --text-primary: rgba(66, 18, 60, 0.863);
+    /* --text-primary: rgba(66, 18, 60, 0.863); */
+    --text-primary: #42123c;    
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
     --bg-light: #f8fafc;
@@ -72,7 +73,7 @@ p {
 }
 
 .btn-primary {
-    background: #374151;
+    background: #30678be3;
     color: white;
 }
 
@@ -89,9 +90,9 @@ p {
 }
 
 .btn-secondary:hover {
-    background: #374151;
+    background: #1f2937;
     color: white;
-    border-color: #374151;
+    border-color: #1f2937;
 }
 
 .btn-full {
@@ -121,7 +122,7 @@ p {
 
 .nav-brand h2 {
     /* color: #1e3a8a; */
-    rgba(66, 18, 60, 0.863)
+    color: rgba(66, 18, 60, 0.863)
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     font-weight: 700;
     font-size: 1.75rem;
@@ -279,7 +280,7 @@ p {
 }
 
 .service-btn {
-    background: #374151;
+    background: #30678be3;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -381,7 +382,7 @@ p {
     background: #f1f5f9;
     padding: 2rem;
     border-radius: var(--border-radius);
-    border-left: 4px solid #3b82f6;
+    border-left: 4px solid #992389;/*#3b82f6;*/
 }
 
 .testimonial p {
@@ -541,17 +542,21 @@ p {
 }
 
 .footer-section a {
-    color: #d1d5db;
+    color: white;/*#d1d5db;*/
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-section a:hover {
+    color: rgba(255, 255, 255, 0.445);
+}
+
+.footer-section p {
     color: white;
 }
 
 .footer-bottom {
-    border-top: 1px solid #374151;
+    border-top: 1px solid white;/*#374151;*/
     padding-top: 1rem;
     text-align: center;
     color: #9ca3af;

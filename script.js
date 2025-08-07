@@ -6,6 +6,9 @@ const modal = document.getElementById('successModal');
 const closeModal = document.querySelector('.close');
 const serviceCards = document.querySelectorAll('.service-card');
 
+// Initialize EmailJS
+emailjs.init('Xmkxz0TTKTduAhmf4');
+
 // Navigation Toggle
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -152,85 +155,47 @@ form.addEventListener('submit', (e) => {
         return;
     }
     
-    // Send via Formspree directly
-    fetch('https://formspree.io/f/xrblkwvl', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Success
+    // Prepare data for EmailJS
+    const templateParams = {
+        empresa: empresa,
+        nombre: nombre,
+        email: email,
+        telefono: telefono,
+        cargo: formData.get('cargo') || 'No especificado',
+        empleados: formData.get('empleados') || 'No especificado',
+        servicios: formData.getAll('servicios').join(', ') || 'No especificado',
+        mensaje: formData.get('mensaje') || 'No hay mensaje adicional'
+    };
+    
+    // Send via EmailJS
+    emailjs.send('service_wjxyv8j', 'template_qy4ok9r', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
             showSuccessMessage();
             form.reset();
-        } else {
-            throw new Error('Formspree error');
-        }
-    })
-    .catch(error => {
-        console.log('Formspree failed, using mailto fallback');
-        // Fallback to mailto
-        const data = {
-            empresa: empresa,
-            nombre: nombre,
-            email: email,
-            telefono: telefono,
-            cargo: formData.get('cargo') || 'No especificado',
-            empleados: formData.get('empleados') || 'No especificado',
-            servicios: formData.getAll('servicios'),
-            mensaje: formData.get('mensaje') || 'No hay mensaje adicional'
-        };
-        
-        const mailtoLink = createMailtoLink(data);
-        window.open(mailtoLink, '_blank');
-        
-        // Show success message after a delay
-        setTimeout(() => {
-            showSuccessMessage();
-            form.reset();
-        }, 1000);
-    })
-    .finally(() => {
-        // Restore button state
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    });
+        })
+        .catch(function(error) {
+            console.log('EmailJS failed:', error);
+            // Fallback to mailto
+            const mailtoLink = createMailtoLink(templateParams);
+            window.open(mailtoLink, '_blank');
+            
+            // Show success message after a delay
+            setTimeout(() => {
+                showSuccessMessage();
+                form.reset();
+            }, 1000);
+        })
+        .finally(() => {
+            // Restore button state
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
 });
 
 // Show success message
 function showSuccessMessage() {
     modal.style.display = 'block';
-}
-
-// Alternative: Simple PHP backend (if you have server)
-function sendViaPHP(data) {
-    fetch('send_email.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        if (result.success) {
-            modal.style.display = 'block';
-            form.reset();
-        } else {
-            alert('Error al enviar el formulario. Por favor, intenta de nuevo.');
-        }
-    })
-    .catch(() => {
-        // Fallback to mailto
-        const mailtoLink = createMailtoLink(data);
-        window.open(mailtoLink, '_blank');
-        setTimeout(() => {
-            modal.style.display = 'block';
-            form.reset();
-        }, 1000);
-    });
 }
 
 // Create mailto link
@@ -264,7 +229,7 @@ Enviado desde el formulario web de SIRH
 Fecha: ${new Date().toLocaleString('es-ES')}
     `.trim();
     
-    return `mailto:sirh.honduras@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:info@sirh-honduras.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 // Modal close handlers
